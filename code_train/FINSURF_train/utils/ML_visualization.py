@@ -13,10 +13,10 @@ import sys
 
 import itertools as itt
 
-from FINSURF_train.utils.ML_tests import Clf_scores
-from FINSURF_train.utils.ML_tests import evaluate_classifier_preds
-from FINSURF_train.utils.ML_tests import named_confusion_matrix
-from FINSURF_train.utils.ML_tests import label_majority_class_assignment
+from ML_tests import Clf_scores
+from ML_tests import evaluate_classifier_preds
+from ML_tests import named_confusion_matrix
+from ML_tests import label_majority_class_assignment
 
 from scipy import interp
 
