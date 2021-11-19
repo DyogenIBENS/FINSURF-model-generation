@@ -39,7 +39,7 @@ bioRxiv 2021.05.03.442347; doi: https://doi.org/10.1101/2021.05.03.442347
 
 # Content
 
-This branch contains all the code and notebooks related to the training, evaluation, and application
+This repository contains all the code and notebooks related to the training, evaluation, and application
 of the FINSURF-adjusted prediction model.
 
 In `code_train/FINSURF_train/` you will find Python scripts and libraries that were developped in the
@@ -53,19 +53,35 @@ Actually most of them contain figures that are presented in the papers :
 
 - `FINSURF_model-creation_and_cross-performance.ipynb` contains the figures related to the training of
   FINSURF models following different sampling-schemes for negative controls, and how this sampling
-  affect cross-performance of the models (supplementary figure 1 and main figure 2a,b)
+  affect cross-performance of the models (supplementary figure 1 and main figure 2a,b,c)
 
 - `FINSURF-adjusted_comparison-methods_kfold_and_genomiser-vs-clinvar.ipynb` contains the figures
   related to the evaluation of FINSURF-adjusted model on independent datasets of variants, as
-  presented in main figure 2c and supplementary figure 2
+  presented in main figure 2d and supplementary figure 3
 
 - `models_analysis_HGMD_feature-contribs-profiles-training-set.ipynb` contains the exploration of the
   positive controls from the training-set of FINSURF-adjusted using the feature-contribution method,
   that allowed to identified different functional profiles of regulatory variants, as presented in
-  main figure 03 and in supplementary figure 4
+  main figure 03 and in supplementary figure 5
 
 - `non-HGMD-Genomizer_ranks_diseases_visualization.ipynb` shows the results of the application of
   FINSURF-adjusted in simulated "real-case scenarios", as presented in main figure 4 and supplementary
-  figure 5
+  figure 6
 
 
+In addition to these notebooks, a notebook named `FINSURF-adjusted_DEMO-COMPLETE_CV_TRAINING_and_functional-profiles-examples` can be found.
+
+This notebook is a fully executable notebook that enables one to explore the FINSURF-adjusted trained model, its cross-validation results, as well as the method to extract feature contributions from the trained model.
+
+Besides, the model contains the code and plots associated to the main figure 3c and d where we present two examples of non-coding variants, scored by FINSURF, and for which the functional profiles (combination of feature contributions and scaled features) were extracted.
+
+To allow the execution of this notebook, we added a `data/` directory, which contain the following folders:
+
+- `example_functional_profiles/` : all data related to the two example variants.
+- `regulatory_regions/` : the table of FINSURF Regulatory Regions.
+- `trained_model/` : all data related to the training and cross-validation of the model.
+- `variants/` : metadata related to variant annotation.
+
+Please note that the training data for the FINSURF models is under licensed access.
+We cannot publish the genomic coordinates or identifiers of variants in the database, as this violates the terms of the licensing agreement.
+Hence the data table available only contains an internal ID `row_id` and numeric annotations used by the model.
