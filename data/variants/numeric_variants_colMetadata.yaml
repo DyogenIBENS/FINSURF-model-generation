@@ -1,0 +1,106 @@
+CDTS: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: CDTS}
+CGdinit: {category: GENOME, color: '#30db88', distype: binary, old_name: CGdinit}
+CGdinit.mean.1000: {category: GENOME, color: '#30db88', distype: continuous, old_name: CGdinit.mean.1000}
+CpGisland: {category: GENOME, color: '#30db88', distype: binary, old_name: CpGisland}
+H3K27ac_medFC: {category: CHROMATIN, color: '#E53030', distype: continuous, old_name: H3K27ac_medFC}
+H3K4me1_medFC: {category: CHROMATIN, color: '#E53030', distype: continuous, old_name: H3K4me1_medFC}
+H3K4me3_medFC: {category: CHROMATIN, color: '#E53030', distype: continuous, old_name: H3K4me3_medFC}
+allGenesNames.closest.downstream: {category: GENOME, color: '#30db88', distype: other,
+  old_name: allGenesNames.closest.downstream}
+allGenesNames.closest.downstream.dist: {category: GENOME, color: '#30db88', distype: continuous,
+  old_name: allGenesNames.closest.downstream}
+allGenesNames.closest.upstream: {category: GENOME, color: '#30db88', distype: other,
+  old_name: allGenesNames.closest.upstream}
+allGenesNames.closest.upstream.dist: {category: GENOME, color: '#30db88', distype: continuous,
+  old_name: allGenesNames.closest.upstream}
+biotypes.best_biotype: {category: GENOME, color: '#30db88', distype: other, old_name: biotypes.multi}
+biotypes.multi: {category: GENOME, color: '#30db88', distype: other, old_name: biotypes.multi}
+dnaseClust: {category: CHROMATIN, color: '#E53030', distype: continuous, old_name: dnaseClust}
+fantom.bestScore: {category: ENHANCERS, color: '#1260e8', distype: continuous, old_name: fantom}
+fantom.count_targs: {category: ENHANCERS, color: '#1260e8', distype: discrete, old_name: fantom}
+focs_fantom.count_targs: {category: ENHANCERS, color: '#1260e8', distype: discrete,
+  old_name: focs_fantom}
+focs_fantom.maxScore: {category: ENHANCERS, color: '#1260e8', distype: continuous,
+  old_name: focs_fantom}
+focs_groseq.count_targs: {category: ENHANCERS, color: '#1260e8', distype: discrete,
+  old_name: focs_groseq}
+focs_groseq.maxScore: {category: ENHANCERS, color: '#1260e8', distype: continuous,
+  old_name: focs_groseq}
+focs_roadmap.count_targs: {category: ENHANCERS, color: '#1260e8', distype: discrete,
+  old_name: focs_roadmap}
+focs_roadmap.maxScore: {category: ENHANCERS, color: '#1260e8', distype: continuous,
+  old_name: focs_roadmap}
+genhancer.bestScore: {category: ENHANCERS, color: '#1260e8', distype: continuous,
+  old_name: genhancer.multi}
+genhancer.bestScore_targs: {category: ENHANCERS, color: '#1260e8', distype: continuous,
+  old_name: genhancer.multi}
+genhancer.count_targs: {category: ENHANCERS, color: '#1260e8', distype: discrete,
+  old_name: genhancer.multi}
+gerpElem: {category: CONSERVATION, color: '#8700ff', distype: binary, old_name: gerpElem}
+gerpScore: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: gerpScore}
+gerpScore.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: gerpScore.mean.10}
+linsight: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: linsight}
+linsight.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: linsight.mean.10}
+pegasus.count_targs: {category: ENHANCERS, color: '#1260e8', distype: continuous,
+  old_name: pegasus}
+pegasus.score: {category: ENHANCERS, color: '#1260e8', distype: continuous, old_name: pegasus}
+phast100w: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phast100w}
+phast100w.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: phast100w.mean.10}
+phast20w: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phast20w}
+phast20w.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: phast20w.mean.10}
+phast46wPla: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phast46wPla}
+phast46wPla.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: phast46wPla.mean.10}
+phast46wPri: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phast46wPri}
+phast46wPri.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: phast46wPri.mean.10}
+phast46wVer: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phast46wVer}
+phast46wVer.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: phast46wVer.mean.10}
+phyl100w: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phyl100w}
+phyl100w.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: phyl100w.mean.10}
+phyl20w: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phyl20w}
+phyl20w.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phyl20w.mean.10}
+phyl46wPla: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phyl46wPla}
+phyl46wPla.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: phyl46wPla.mean.10}
+phyl46wPri: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phyl46wPri}
+phyl46wPri.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: phyl46wPri.mean.10}
+phyl46wVer: {category: CONSERVATION, color: '#8700ff', distype: continuous, old_name: phyl46wVer}
+phyl46wVer.mean.10: {category: CONSERVATION, color: '#8700ff', distype: continuous,
+  old_name: phyl46wVer.mean.10}
+protGenesNames.closest.downstream: {category: GENOME, color: '#30db88', distype: other,
+  old_name: protGenesNames.closest.downstream}
+protGenesNames.closest.downstream.dist: {category: GENOME, color: '#30db88', distype: continuous,
+  old_name: protGenesNames.closest.downstream}
+protGenesNames.closest.upstream: {category: GENOME, color: '#30db88', distype: other,
+  old_name: protGenesNames.closest.upstream}
+protGenesNames.closest.upstream.dist: {category: GENOME, color: '#30db88', distype: continuous,
+  old_name: protGenesNames.closest.upstream}
+roadmapState.ZNFRpts: {category: CHROMATIN, color: '#E53030', distype: discrete, old_name: roadmapState}
+roadmapState.enhancer: {category: CHROMATIN, color: '#E53030', distype: discrete,
+  old_name: roadmapState}
+roadmapState.heterochrom: {category: CHROMATIN, color: '#E53030', distype: discrete,
+  old_name: roadmapState}
+roadmapState.promoter: {category: CHROMATIN, color: '#E53030', distype: discrete,
+  old_name: roadmapState}
+roadmapState.quies: {category: CHROMATIN, color: '#E53030', distype: discrete, old_name: roadmapState}
+roadmapState.repressed: {category: CHROMATIN, color: '#E53030', distype: discrete,
+  old_name: roadmapState}
+roadmapState.transcribed: {category: CHROMATIN, color: '#E53030', distype: discrete,
+  old_name: roadmapState}
+tfbsClust.count: {category: CHROMATIN, color: '#E53030', distype: discrete, old_name: tfbsClust}
+tfbsClust.scoremax: {category: CHROMATIN, color: '#E53030', distype: continuous, old_name: tfbsClust}
+tfbsCons.count: {category: CHROMATIN, color: '#E53030', distype: discrete, old_name: tfbsCons}
+tfbsCons.scoremax: {category: CHROMATIN, color: '#E53030', distype: continuous, old_name: tfbsCons}
+tfbsEnsembl.count: {category: CHROMATIN, color: '#E53030', distype: discrete, old_name: tfbsEnsembl}
+tfbsEnsembl.scoremax: {category: CHROMATIN, color: '#E53030', distype: continuous,
+  old_name: tfbsEnsembl}
+vartrans: {category: other, color: '#BBBBBB', distype: other, old_name: vartrans}
+vartrans.ord: {category: other, color: '#BBBBBB', distype: discrete, old_name: vartrans}
