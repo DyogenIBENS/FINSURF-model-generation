@@ -3,3 +3,5 @@ data_server/
 __pycache__/
 .ipynb_checkpoints/
 notebooks_train/FINSURF-adjusted_DEMO-COMPLETE_CV_TRAINING_and_functional-profiles-examples_CODE-FOR-EXTRACTION-CANDIDATE-VARIANTS.ipynb
+*.pdf
+*.svg
