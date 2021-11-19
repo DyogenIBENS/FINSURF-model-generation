@@ -1,0 +1,42 @@
+old	new
+vartrans.ord	Variant type
+CGdinit	CG dinucleotide
+CpGisland	CpG island
+phyl100w	PhyloP 100-way
+phyl20w	PhyloP 20-way
+phast100w	PhastCons 100-way
+phast20w	PhastCons 20-way
+gerpScore	GERP Score
+gerpElem	GERP Element
+CDTS	CDTS
+dnaseClust	DNAse-sensitive cluster
+roadmapState.promoter	Promoter state
+roadmapState.transcribed	Transcribed state
+roadmapState.enhancer	Enhancer state
+roadmapState.ZNFRpts	ZNFRpts state
+roadmapState.heterochrom	Heterochromatin state
+roadmapState.repressed	Repressed state
+roadmapState.quies	Quiescent state
+H3K4me1_medFC	H3K4me1 fold-change
+H3K4me3_medFC	H3K4me3 fold-change
+H3K27ac_medFC	H3K27ac fold-change
+tfbsEnsembl.count	TFBS count
+tfbsEnsembl.scoremax	TFBS max score
+tfbsCons.count	Conserved TFBS count
+tfbsCons.scoremax	Conserved TFBS max score
+tfbsClust.count	Clustered TFBS count
+tfbsClust.scoremax	Clustered TFBS max score
+pegasus.score	PEGASUS score
+pegasus.count_targs	PEGASUS targets count
+fantom.bestScore	FANTOM5 max score
+fantom.count_targs	FANTOM5 targets count
+genhancer.bestScore	GeneHancer max score
+genhancer.count_targs	GeneHancer targets count
+genhancer.bestScore_targs	GeneHancer max score targets
+focs_fantom.maxScore	FOCS-FANTOM5 max score
+focs_fantom.count_targs	FOCS-FANTOM5 targets count
+focs_groseq.maxScore	FOCS-GroSeq max score
+focs_groseq.count_targs	FOCS-GroSeq targets count
+focs_roadmap.maxScore	FOCS-Roadmap max score
+focs_roadmap.count_targs	FOCS-Roadmap targets count
+ratio_shared_targets	Ratio of shared targets
