@@ -5,20 +5,19 @@ import importlib
 import sys
 
 import pandas as pd
-if not '/users/ldog/moyon/Thesis//scripts/' in sys.path:
-    sys.path.insert(0,'/users/ldog/moyon/Thesis//scripts/')
+if not '../utils/' in sys.path:
+    sys.path.insert(0,'../utils/')
 
 import dataframes
 importlib.reload(dataframes)
 
-
 # Preformatting of GENCODE V29.
-path = "./v29_regulatory_regions.bed.gz"
+path = "./input_enhancers/v29_regulatory_regions.bed.gz"
 df = pd.read_csv(path, header=None, sep="\t", names='chrom,start,end,name'.split(','))
 df['name'].head(100).apply(
         lambda v: [dict([(k, v) if k!='gene' else (k,gene_map(v,v)) for k,v in zip(['biotype','gene','strand'], e.split(','))]) for e in v.split('|')])
 
-path = "/users/ldog/moyon/Thesis/RegulationData/hg19/genome_annotations/gencode/v29lifthg19/gencode_ensemblIDs_to_geneNames.tsv.gz"
+path = "./gene_tables/gencode_ensemblIDs_to_geneNames.tsv.gz"
 gene_map = pd.read_csv(path, header=0, index_col=None, sep="\t")
 gene_map = gene_map.set_index('gene_id')['gene_name'].to_dict()
 
@@ -26,7 +25,7 @@ new_name = df['name'].apply(lambda v: '|'.join(
                 [dataframes.convert_keyvalue_pairs_to_str([(k, v) if k!='gene' else (k,gene_map.get(v,v))
                     for k,v in zip(['biotype','gene','strand'], e.split(','))],',',':') for e in v.split('|')]))
 df['name'] = new_name
-df.to_csv("./v29_regulatory_regions_NAMES.bed.gz", header=False, index=False, sep="\t", compression="gzip")
+df.to_csv("./postprocessed_enhancers/v29_regulatory_regions_NAMES.bed.gz", header=False, index=False, sep="\t", compression="gzip")
 
 
 # NOW LET'S FORMAT ALL THE DATASETS TO A COMMON FORMAT.
@@ -35,42 +34,42 @@ df.to_csv("./v29_regulatory_regions_NAMES.bed.gz", header=False, index=False, se
 # or a score for the element (that's for GeneHancer mostly)
 
 # GENCODEV29 PROM + UTR
-df = pd.read_table("./v29_regulatory_regions_NAMES.bed.gz", header=None, names=['chrom','start','end','name'])
+df = pd.read_table("./preprocessed_enhancers/v29_regulatory_regions_NAMES.bed.gz", header=None, names=['chrom','start','end','name'])
 df['name'] = 'src=gencodeV2::annots='+df['name']
-df.to_csv("./FINAL_GENCODE_v29_regulatory_regions_NAMES.bed.gz", header=False, index=False, sep="\t", compression="gzip")
+df.to_csv("./postprocessed_enhancers/FINAL_GENCODE_v29_regulatory_regions_NAMES.bed.gz", header=False, index=False, sep="\t", compression="gzip")
 
 # FANTOM5
-df = pd.read_table("./fantom5_enh.bed.gz", header=None, names = ['chrom','start','end','name'])
+df = pd.read_table("./preprocessed_enhancers/fantom5_enh.bed.gz", header=None, names = ['chrom','start','end','name'])
 df['name'] = 'src=FANTOM5::annots='+df['name']
-df.to_csv("./FINAL_fantom5_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
+df.to_csv("./postprocessed_enhancers/FINAL_fantom5_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
 
 # FOCS_F5
-df = pd.read_table("./FOCS_fantom5_enh.bed.gz", header=None, names = ['chrom','start','end','name'])
+df = pd.read_table("./preprocessed_enhancers/FOCS_fantom5_enh.bed.gz", header=None, names = ['chrom','start','end','name'])
 df['name'] = 'src=FOCSFANTOM5::annots='+df['name']
-df.to_csv("./FINAL_FOCSfantom5_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
+df.to_csv("./postprocessed_enhancers/FINAL_FOCSfantom5_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
 
 # PEGASUS
-df = pd.read_table("./pegasus_enh.bed.gz", header=None, names = ['chrom','start','end','name'])
+df = pd.read_table("./preprocessed_enhancers/pegasus_enh.bed.gz", header=None, names = ['chrom','start','end','name'])
 new_name = 'src=PEGASUS::annots='+df['name'].apply(
             lambda v: dataframes.convert_keyvalue_pairs_to_str([(k,v)
                         for k,v in dataframes.transform_to_dict(v,',',':').items() if k!='src']))
 df['name'] = new_name
-df.to_csv("./FINAL_pegasus_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
+df.to_csv("./postprocessed_enhancers/FINAL_pegasus_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
 
 
 # FOCS_GS
-df = pd.read_table("./groseq_enh.bed.gz", header=None, names = ['chrom','start','end','name'])
+df = pd.read_table("./preprocessed_enhancers/FOCS_groseq_enh.bed.gz", header=None, names = ['chrom','start','end','name'])
 df['name'] = 'src=FOCSGROSEQ::annots='+df['name']
-df.to_csv("./FINAL_FOCSgroseq_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
+df.to_csv("./postprocessed_enhancers/FINAL_FOCSgroseq_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
 
 # FOCS_RM
-df = pd.read_table("./roadmap_enh.bed.gz", header=None, names = ['chrom','start','end','name'])
+df = pd.read_table("./preprocessed_enhancers/FOCS_roadmap_enh.bed.gz", header=None, names = ['chrom','start','end','name'])
 df['name'] = 'src=FOCSROADMAP::annots='+df['name']
-df.to_csv("./FINAL_FOCSroadmap_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
+df.to_csv("./postprocessed_enhancers/FINAL_FOCSroadmap_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
 
 
 # GENEHANCER
-df = pd.read_table("./genehancer_enh.bed.gz", header=None, names=['chrom','start','end','name','score','strand','info'])
+df = pd.read_table("./preprocessed_enhancers/genehancer_enh.bed.gz", header=None, names=['chrom','start','end','name','score','strand','info'])
 # First we can try and reduce the redundancy in annotations ;
 # for instance : 'src:GH01F000638,targets:MTND2P28,score:0.76|src:GH01F000638,targets:MTCO1P12,score:0.76'
 # can be : 'src:GH01F000638,targets:MTND2P28;MTCO1P12,score:0.76'
@@ -103,4 +102,4 @@ df['name2'] = 'src='+df['name']+'::score='+df['score']+'::annots='+df['info2'].a
 df['name2'] = 'src='+df['name']+'::score='+df['score'].astype(float)+'::annots='+df['info2'].apply(lambda v: '|'.join(v))
 df['name2'] = 'src='+df['name']+'::score='+df['score'].astype(str)+'::annots='+df['info2'].apply(lambda v: '|'.join(v))
 
-df.loc[:,['chrom','start','end','name2']].to_csv("./FINAL_GENEHANCER_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
+df.loc[:,['chrom','start','end','name2']].to_csv("./postprocessed_enhancers/FINAL_GENEHANCER_enh.bed.gz",header=False,index=False,sep="\t",compression="gzip")
